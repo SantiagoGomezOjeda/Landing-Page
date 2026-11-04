@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Photon Labs | Simulador académico de dimensionamiento fotovoltaico y cotización preliminar." />
+  <title>Photon Labs | Simulador Solar</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Photon Labs, inicio"><span class="brand-icon" aria-hidden="true">✳</span><span>PHOTON<span class="brand-light">LABS</span><small>ENERGY ENGINEERING</small></span></a>
+      <div class="side-label">PLATAFORMA</div>
+      <nav class="menu" id="navigation">
+        <a class="navlink active" data-page="inicio" href="#inicio"><span>▦</span> Resumen general</a>
+        <a class="navlink" data-page="consumo" href="#consumo"><span>▤</span> Consumo del aula</a>
+        <a class="navlink" data-page="paneles" href="#paneles"><span>☼</span> Paneles solares</a>
+        <a class="navlink" data-page="inversor" href="#inversor"><span>⌁</span> Inversor</a>
+        <a class="navlink" data-page="baterias" href="#baterias"><span>▣</span> Baterías</a>
+        <a class="navlink" data-page="catalogo" href="#catalogo"><span>◫</span> Catálogo comercial</a>
+        <a class="navlink" data-page="cotizacion" href="#cotizacion"><span>＄</span> Cotización y PDF</a>
+      </nav>
+      <div class="side-bottom"><span class="status-dot"></span> Proyecto académico · TE1020 <small>Etapa 1 / 5 · Prototipo inicial</small></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><button class="menu-toggle" id="toggle-menu" aria-label="Abrir o cerrar menú" aria-expanded="false">☰</button><span>PLATAFORMA DE CONSULTORÍA SOLAR</span><div class="top-right"><span class="pill">● Versión 0.1</span><span class="avatar">PL</span></div></header>
+      <div class="content">
+        <section class="page active" id="inicio" aria-labelledby="title-inicio">
+          <div class="eyebrow">PHOTON LABS / PANEL DE CONTROL</div>
+          <div class="hero"><div><h1 id="title-inicio">La energía de una mejor decisión.</h1><p>Convierte el consumo de un espacio en una propuesta solar clara, verificable y profesional.</p><button class="primary" data-go="consumo">Comenzar análisis <span aria-hidden="true">→</span></button></div><div class="hero-orbit" aria-hidden="true"><div class="sun">✳</div><div class="orbit o1"></div><div class="orbit o2"></div></div></div>
+          <div class="section-head"><div><h2>Resumen del proyecto</h2><p>Resultados preliminares del inventario de cargas de ejemplo.</p></div><span class="outline-tag">Datos de demostración</span></div>
+          <div class="metrics"><article class="metric"><span class="metric-icon">⚡</span><div class="metric-title">Potencia conectada</div><strong id="dash-power">—</strong><small>Suma de potencias nominales</small></article><article class="metric"><span class="metric-icon">◷</span><div class="metric-title">Energía diaria</div><strong id="dash-energy">—</strong><small>Según horas de uso ingresadas</small></article><article class="metric"><span class="metric-icon">▤</span><div class="metric-title">Equipos registrados</div><strong id="dash-items">—</strong><small>Cantidades totales del inventario</small></article></div>
+          <div class="two-col"><article class="panel"><div class="panel-header"><div><h3>Ruta de desarrollo</h3><p>Avanzaremos con verificaciones en cada etapa.</p></div></div><ol class="timeline"><li class="current"><span>01</span><div><b>Interfaz y estructura inicial</b><small>Semana 1 · En desarrollo</small></div></li><li><span>02</span><div><b>Inventario y consumo del aula</b><small>Semana 2 · Modelo y validación</small></div></li><li><span>03</span><div><b>Paneles y catálogo verificado</b><small>Semana 3 · Mercado real</small></div></li><li><span>04</span><div><b>Compatibilidad y finanzas</b><small>Semana 4 · Modelo técnico-económico</small></div></li><li><span>05</span><div><b>Validación y reporte PDF</b><small>Semana 5 · Entrega final</small></div></li></ol></article><article class="panel note-panel"><span class="note-kicker">NUESTRO OBJETIVO</span><h3>Ingeniería que genera confianza.</h3><p>Este simulador producirá <strong>dimensionamientos y cotizaciones preliminares</strong>, no planos de instalación ni una garantía de ahorro.</p><div class="separator"></div><h4>Lo que ya puedes probar</h4><p>Abre “Consumo del aula”, agrega o elimina equipos y observa cómo cambian los valores de potencia y energía.</p><button class="secondary" data-go="consumo">Ir a inventario →</button></article></div>
+        </section>
+        <section class="page" id="consumo" aria-labelledby="title-consumo"><div class="eyebrow">MÓDULO 01 / CLIENTE</div><h1 id="title-consumo" class="page-title">Consumo del aula</h1><p class="lead">Registra los equipos del salón para estimar la potencia conectada y el consumo energético diario.</p><div class="info-banner">Los valores iniciales son <b>ficticios y solo para demostrar la interfaz</b>. Sustitúyelos con datos reales medidos o tomados de la etiqueta de cada equipo.</div>
+          <div class="metrics compact"><article class="metric"><div class="metric-title">Potencia conectada</div><strong id="total-power">—</strong></article><article class="metric"><div class="metric-title">Energía diaria</div><strong id="total-energy">—</strong></article><article class="metric"><div class="metric-title">Energía mensual estimada</div><strong id="total-month">—</strong><small id="month-caption">22 días de uso</small></article></div>
+          <article class="panel"><div class="panel-header"><div><h3>Inventario de cargas</h3><p>Potencia nominal en W, uso diario en horas.</p></div><button class="secondary small" id="reset-demo">Restablecer ejemplo</button></div><div class="table-scroll"><table><thead><tr><th>Equipo</th><th>Cantidad</th><th>Potencia (W)</th><th>Horas/día</th><th>kWh/día</th><th><span class="sr-only">Acciones</span></th></tr></thead><tbody id="load-table"></tbody></table></div><p class="table-empty" id="table-empty" hidden>No hay equipos registrados. Añade el primero abajo.</p></article>
+          <article class="panel form-panel"><div class="panel-header"><div><h3>Agregar equipo</h3><p>Ingresa los datos de una carga eléctrica.</p></div></div><form id="add-form"><div class="fields"><label>Nombre del equipo<input id="name" type="text" maxlength="65" placeholder="Ej. Proyector" required /></label><label>Cantidad<input id="quantity" type="number" min="1" max="10000" step="1" placeholder="1" required /></label><label>Potencia por equipo (W)<input id="watts" type="number" min="0.01" max="1000000" step="any" placeholder="150" required /></label><label>Horas de uso al día<input id="hours" type="number" min="0.01" max="24" step="any" placeholder="5" required /></label></div><div class="form-bottom"><label class="days">Días de uso al mes <input id="days" type="number" min="1" max="31" step="1" value="22" required /></label><button type="submit" class="primary">+ Agregar al inventario</button></div><div id="form-feedback" class="feedback" role="status" aria-live="polite"></div></form></article>
+          <div class="formula"><b>Fórmulas de esta versión</b><p>Potencia conectada = Σ(cantidad × potencia en W) / 1000, en kW.</p><p>Consumo diario = Σ(cantidad × potencia en W × horas por día) / 1000, en kWh/día.</p><p>Consumo mensual = consumo diario × días de uso al mes. No se considera simultaneidad ni variación real del consumo.</p></div>
+        </section>
+        <section class="page" id="paneles"><div class="eyebrow">MÓDULO 02 / GENERACIÓN</div><h1 class="page-title">Paneles solares</h1><div class="coming"><span>☼</span><h2>Dimensionamiento fotovoltaico</h2><p>En la etapa 3 calcularemos la cantidad de módulos, potencia instalada y configuración serie/paralelo según horas solares pico, pérdidas y fichas técnicas verificadas.</p><span class="coming-label">Disponible en una próxima etapa</span></div></section>
+        <section class="page" id="inversor"><div class="eyebrow">MÓDULO 03 / CONVERSIÓN</div><h1 class="page-title">Inversor</h1><div class="coming"><span>⌁</span><h2>Selección y compatibilidad</h2><p>Verificaremos capacidad nominal, ventanas MPPT, límites de tensión y corriente, y compatibilidad con los paneles seleccionados.</p><span class="coming-label">Disponible en una próxima etapa</span></div></section>
+        <section class="page" id="baterias"><div class="eyebrow">MÓDULO 04 / ALMACENAMIENTO</div><h1 class="page-title">Baterías</h1><div class="coming"><span>▣</span><h2>Capacidad y autonomía</h2><p>Estimaremos la energía útil necesaria y declararemos profundidad de descarga, eficiencia, tensión nominal y límites del cálculo.</p><span class="coming-label">Disponible en una próxima etapa</span></div></section>
+        <section class="page" id="catalogo"><div class="eyebrow">MÓDULO 05 / MERCADO</div><h1 class="page-title">Catálogo comercial</h1><div class="coming"><span>◫</span><h2>Equipos y precios verificables</h2><p>Incluiremos marca, modelo, especificaciones, proveedor, enlaces, precios en MXN y fecha de consulta. No se usarán precios inventados.</p><span class="coming-label">Disponible en una próxima etapa</span></div></section>
+        <section class="page" id="cotizacion"><div class="eyebrow">MÓDULO 06 / PROPUESTA</div><h1 class="page-title">Cotización y PDF</h1><div class="coming"><span>＄</span><h2>Una propuesta que el cliente comprenda</h2><p>Más adelante integraremos presupuesto, tarifa MXN/kWh, ahorro estimado, periodo de recuperación y generación de un PDF técnico-comercial.</p><span class="coming-label">Disponible en una próxima etapa</span></div></section>
+      </div><footer>© 2026 Photon Labs · Proyecto educativo simulado · TE1020 · Las estimaciones no sustituyen un diseño eléctrico autorizado.</footer>
+    </main>
+  </div>
+</body>
+</html>
